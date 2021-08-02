@@ -8,17 +8,11 @@
         <template slot="header">
           <div class="row">
             <div class="col-sm-6" :class="isRTL ? 'text-right' : 'text-left'">
-              <template v-if="!isRTL">
-                <h5 class="card-category">Total Shipments</h5>
+              <template>
+                <h5 class="card-category">Scanning System</h5>
               </template>
-              <template v-else>
-                <h5 class="card-category">مجموع الشحنات</h5>
-              </template>
-              <template v-if="!isRTL">
-                <h2 class="card-title">Performance</h2>
-              </template>
-              <template v-else>
-                <h2 class="card-title">  أداء</h2>
+              <template>
+                <h2 class="card-title">Usage</h2>
               </template>
             </div>
             <div class="col-sm-6">
@@ -27,19 +21,6 @@
                    :class="isRTL ? 'float-left' : 'float-right'">
                    <template v-if="!isRTL">
                      <label v-for="(option, index) in bigLineChartCategories"
-                            :key="option"
-                            class="btn btn-success btn-sm btn-simple"
-                            :class="{active:bigLineChart.activeIndex === index}"
-                            :id="index">
-                        <input type="radio"
-                              @click="initBigChart(index)"
-                              name="options" autocomplete="off"
-                              :checked="bigLineChart.activeIndex === index">
-                        {{ option }}
-                     </label>
-                   </template>
-                   <template v-else>
-                     <label v-for="(option, index) in bigLineChartCategoriesAr"
                             :key="option"
                             class="btn btn-success btn-sm btn-simple"
                             :class="{active:bigLineChart.activeIndex === index}"
@@ -195,18 +176,11 @@ export default {
   data(){
     return{
       bigLineChartCategories:[
-        "Accounts",
-        "Purchases",
-        "Sessions"
-      ],
-      bigLineChartCategoriesAr:[
-        "حسابات",
-        "المشتريات",
-        "جلسات"
+        "Slides",
+        "Memories"
       ],
       bigLineChart: {
         allData: [
-          [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100],
           [80, 120, 105, 110, 95, 105, 90, 100, 80, 95, 70, 120],
           [60, 80, 65, 130, 80, 105, 90, 130, 70, 115, 60, 130]
         ],
